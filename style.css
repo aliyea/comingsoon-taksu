@@ -1,3 +1,8 @@
+/* TARUH PALING ATAS CSS */
+* {
+    box-sizing: border-box;
+}
+
 /* 1. VARIABEL & FONTS */
 :root {
     --taksu-green: #1B4532;
@@ -364,6 +369,13 @@ footer p {
 @media (max-width: 768px) {
     .content-grid {
         grid-template-columns: 1fr;
+        gap: 30px; /* Jarak antara teks dan gambar */
+        margin-top: 20px;
+    }
+    .container {
+        padding: 10px 20px; /* Kanan kiri cuma 20px, biar teks lega */
+        width: 100%;
+        overflow-x: hidden; /* Mencegah scroll ke samping */
     }
     .image-showcase {
         width: 100%;
@@ -378,19 +390,25 @@ footer p {
         height: 100% !important;
     }
     h1 { 
-        font-size: 3rem; 
+        font-size: 2.5rem; /* Judul Taksu diperkecil dikit */
+        margin-top: 10px;
     }
     .headline { 
-        font-size: 2.5rem; 
-    }
+        font-size: 2rem; /* "WEB IN PROGRESS" diperkecil */
+        margin-bottom: 15px;
+    }   
     nav ul {
         flex-direction: column;
         align-items: center;
         gap: 9px;
         
     }
+    .article-body {
+        font-size: 1rem; /* Teks paragraf standar HP */
+        text-align: left; /* Jangan justify di HP, bikin spasi bolong2 */
+    }
     .logo-box {
-        margin-top: 0; /* Kembalikan ke normal di mobile */
+        margin-top: 0; 
     }
 }
 
@@ -412,15 +430,22 @@ footer p {
         font-weight: bold;
         font-size: 20px;
         cursor: pointer;
-        padding: 0 10px; /* Biar area klik lega */
+        padding: 0 10px;
+    }
+    .arrow-icon {
+        width: 14px;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
     }
 
     /* Sembunyikan list menu secara default */
     nav ul {
-        display: none; /* Hilang dulu */
+        display: none;
         flex-direction: column;
         gap: 15px;
         margin-top: 20px;
+        padding-bottom: 10px; /* Kasih ruang bawah dikit */
         animation: fadeIn 0.3s ease;
     }
 
@@ -434,6 +459,21 @@ footer p {
         transform: rotate(180deg);
     }
 }
+    .image-showcase {
+            width: 100%;
+            /* Pakai min-height biar gambar gak gepeng tapi gak kepanjangan */
+            height: 350px; 
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 50px; /* Jarak ke footer */
+        }
+        .image-showcase img {
+        width: 100% !important;
+        height: 100% !important;
+        /* Object fit cover bikin gambar full, tapi pasti ada yg kecrop dikit biar rapi.
+           Kalau mau kelihatan SEMUA gambarnya, ganti jadi 'contain' tapi nanti ada sisa ruang kosong. */
+        object-fit: cover; 
+    }
 
 /* Animasi halus pas muncul */
 @keyframes fadeIn {
