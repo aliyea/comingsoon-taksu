@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMING SOON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Lekton:ital,wght@0,400;0,700;1,400&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&family=Zalando+Sans:ital,wdth,wght@0,75,200..900;1,75,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-accent">
+        <img src="assets/363.svg" alt="Taksu Icon" class="top-icon">
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-box">
+                <img src="assets/logo-taksu.png" alt="Taksu Logo" class="logo-img">
+            </div>
+            <h1>TAKSU BOOK CAFE</h1>
+            <p class="subtitle">Book Cafe & Independent Library</p>
+        </header>
+
+        <div class="info-bar">
+            <div class="ticker-wrapper">
+                <div class="ticker-text">
+                    <span>🐈 NOW OPEN AT JAKARTA SELATAN — OPEN DAILY 10.00 TO 22.00 — VISIT OUR INSTAGRAM @TAKSU.BOOKCAFE FOR UPDATES 🐈</span>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="mobile-menu-trigger" onclick="toggleMobileMenu()">
+                <span>☰</span>
+                <span id="menu-arrow"></span>
+            </div>
+
+            <ul id="nav-list">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">TAKSU PUSTAKA</a></li>
+                <li><a href="#">BOOK CAFE</a></li>
+                <li><a href="#">SPACE</a></li>
+                <li><a href="#">EVENTS & WORKSHOPS</a></li>
+            </ul>
+        </nav>
+        
+
+        <main class="content-grid">
+            <section class="text-content">
+                <h2 class="headline">WEB IN PROGRESS...</h2>
+                <div class="article-body">
+                    <p>
+                        <strong>Our Website is Brewing!</strong> Taksu Book Cafe sudah mulai menyeduh kopi dan membuka koleksi pustaka kami untukmu. Saat ini, kami sedang merapikan halaman web ini agar senyaman ruang fisik kami. Untuk melihat jadwal acara, katalog buku terbaru, atau sekadar mengintip suasana hari ini, silakan ikuti kami di sosial media.
+                    </p>
+                </div>
+
+                <div class="social-actions">
+                    <a href="https://www.instagram.com/taksu.bookcafe/" class="btn btn-outline">
+                        <img src="assets/ig.svg" alt="IG Icon" class="btn-icon">
+                        @taksu.bookcafe
+                    </a>
+
+                    <a href="https://www.tiktok.com/@taksu.bookcafe?_r=1&_t=ZS-92SYBflRIfd" class="btn btn-solid">
+                        <img src="assets/tiktok.svg" alt="Tiktok Icon" class="btn-icon">
+                        @taksu.bookcafe
+                    </a>
+                </div>
+            </section>
+
+            <section class="image-showcase split-container">
+                <div class="reveal-layer">
+                    <img src="assets/2.png" alt="Riot Mood" class="img-inner">
+                </div>
+
+                <div class="split-layer shard-top">
+                    <img src="assets/1.png" alt="Shard Top" class="img-inner">
+                </div>
+
+                <div class="split-layer shard-bottom">
+                    <img src="assets/1.png" alt="Shard Bottom" class="img-inner">
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-line"></div>
+            <p>&copy; 2025. Taksu Book Cafe</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+<script>
+    function toggleMobileMenu() {
+        const navList = document.getElementById('nav-list');
+        const arrow = document.getElementById('menu-arrow');
+        
+        // Toggle class buat show/hide menu
+        navList.classList.toggle('show-menu');
+        
+        // Toggle class buat muter panah
+        arrow.classList.toggle('rotate-arrow');
+    }
+</script>
+</body>

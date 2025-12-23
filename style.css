@@ -1,0 +1,442 @@
+/* 1. VARIABEL & FONTS */
+:root {
+    --taksu-green: #1B4532;
+    --font-expanded: 'Zalando Sans Expanded', sans-serif;
+    --font-condensed: 'Zalando Sans Condensed', sans-serif; 
+    --font-body: 'Courier Prime', monospace;
+    --font-nav: 'Lekton', sans-serif;
+}
+
+/* 2. GLOBAL STYLES */
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body); /* Sudah disinkronkan */
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+/* 3. TOP ACCENT (Bar Hijau Atas) */
+.top-accent {
+    background-color: var(--taksu-green);
+    height: 85px; /* Sesuai request kamu */
+    display: flex;
+    align-items: center; 
+    padding: 0 25px; 
+
+}
+
+.top-icon {
+    width: 140px; /* Kasih width spesifik daripada auto */
+    object-fit: contain; /* Ini bakal maksa gambarnya masuk ke box tanpa kepotong */
+    display: block;
+}
+
+/* 4. HEADER SECTION (Logo & Title) */
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo-box {
+    margin-bottom: -10px;
+    margin-top: -40px; /* Narik logo ke atas sesuai request */
+}
+
+.logo-img {
+    height: 110px;
+}
+
+h1 {
+    font-family: var(--font-expanded); /* Sudah disinkronkan */
+    font-size: 74px;
+    color: var(--taksu-green);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 0.9;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+/* 5. INFO BAR (Newspaper Style) */
+
+.info-bar {
+    border-top: 2px solid #000;
+    margin-top: 20px;
+    padding: 8px 0;
+    overflow: hidden; /* Kunci: Biar teks yang lari ke samping gak kelihatan */
+    background: #fff;
+}
+
+.ticker-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+.ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; 
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    /* Aku ubah dari 20s ke 40s biar lebih lambat dan nyaman dibaca */
+    animation: marquee 40s linear infinite; 
+}
+
+/* Animasi Jalannya */
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0); /* Lari ke kiri sampai habis */
+    }
+}
+
+
+/* 6. NAVBAR */
+
+nav {
+    background-color: var(--taksu-green);
+    margin-top: 8px; 
+    padding: 12px 0;
+    border-bottom: none; 
+    position: relative; /* Wajib ada biar garisnya ngikutin Navbar */
+    margin-bottom: 20px; /* Jarak tambahan ke konten di bawahnya */
+}
+
+
+nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Ketebalan garis */
+    background-color: #000; /* Warna garis */
+    
+    /* INI KUNCINYA: Atur jarak garis dari kotak hijau */
+    bottom: -8px; 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-nav); /* Sudah disinkronkan */
+    font-weight: 550;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* 7. CONTENT GRID */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+.headline {
+    font-family: var(--font-condensed); 
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.article-body {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    text-align: justify;
+    letter-spacing: -0.75px;
+}
+
+.article-body strong {
+    font-size: 1.2rem;
+    color: #e31c78;
+    text-decoration: underline;
+}
+
+/* 8. BUTTONS & SOCIALS */
+.social-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    font-family: var(--font-nav); /* Sudah disinkronkan */
+    text-decoration: none;
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+ 
+}
+
+.btn-icon {
+    width: 20px;    /* Atur ukuran icon biar pas */
+    height: auto;   /* Biar proporsional */
+    margin-right: 10px; /* Memberi jarak antara icon dan teks */
+    display: block; /* Memastikan tidak ada spasi aneh di bawah gambar */
+}
+
+.btn-outline {
+    border: 2.5px solid var(--taksu-green);
+    color: var(--taksu-green);
+}
+
+.btn-solid {
+    background-color: var(--taksu-green);
+    color: white;
+    border: 2px solid var(--taksu-green);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* 9. IMAGE STYLING */
+.image-showcase {
+    height: 100%; /* Ini akan memaksa container setinggi kolom teks di kirinya */
+    display: flex; /* Biar rapi */
+}
+
+.image-showcase img {
+    width: 95%;
+    height: 95%; /* Paksa gambar mengisi penuh tinggi containernya */
+    object-fit: cover; /* INI KUNCINYA: Crop gambar secara proporsional biar gak gepeng */
+    border: 2.5px solid #000;
+}
+
+/* 10. FOOTER */
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-line {
+    border-top: 2px solid var(--taksu-green);
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ========================================= */
+/* CRACK/SHATTER EFFECT (NO EDGE GAPS)       */
+/* ========================================= */
+
+.split-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Reset style untuk semua layer */
+.reveal-layer,
+.split-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    border: none !important;
+}
+
+/* Reset style khusus gambar di dalam layer */
+/* Update bagian ini aja di kode paling bawah */
+
+.img-inner {
+    width: 100% !important;   /* Paksa timpa 95% yang lama */
+    height: 100% !important;  /* Paksa timpa 95% yang lama */
+    object-fit: cover;
+    display: block;
+    margin: 0 !important;     /* Pastikan gak ada margin aneh */
+    
+    /* Hapus border lama */
+    border: none !important; 
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* --- LOGIKA LAYER --- */
+
+/* 1. Layer Belakang (Pink/Reveal) */
+.reveal-layer {
+    z-index: 1;
+    /* Initial state: Zoomed in a bit */
+    transform: scale(1.15); 
+    filter: brightness(0.4) grayscale(100%);
+}
+
+/* 2. Layer Depan (Hijau) */
+.split-layer {
+    z-index: 2;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased; 
+    will-change: transform;
+}
+
+/* --- POLA RETAKAN (CLIP PATH) --- */
+/* Koordinat ditarik keluar (-10% dan 110%) biar gak ada sisa border */
+
+.shard-top {
+    clip-path: polygon(
+        -10% -10%,       
+        110% -10%,     
+        65% 25%,     
+        75% 45%,     
+        40% 55%,     
+        55% 85%,     
+        -10% 110%      
+    );
+    transform-origin: top left;
+}
+
+.shard-bottom {
+    clip-path: polygon(
+        110% -10%,     
+        110% 110%,   
+        -10% 110%,     
+        54.5% 85.5%,   
+        39.5% 54.5%,   
+        74.5% 44.5%,   
+        64.5% 24.5%    
+    );
+    transform-origin: bottom right;
+}
+
+/* --- ANIMASI PAS DI-HOVER --- */
+
+.split-container:hover .shard-top {
+    transform: translate(-30px, -30px) rotate(-5deg) scale(0.95);
+    filter: drop-shadow(15px 15px 20px rgba(0,0,0,0.5));
+}
+
+.split-container:hover .shard-bottom {
+    transform: translate(30px, 30px) rotate(3deg) scale(0.95);
+    filter: drop-shadow(-15px -15px 20px rgba(0,0,0,0.5));
+}
+
+/* Gambar belakang muncul */
+.split-container:hover .reveal-layer {
+    /* FIX IS HERE: Keep it scaled up (1.15) so it covers the edges */
+    transform: scale(1.15);
+    filter: brightness(1) grayscale(0%);
+}
+
+
+/* 11. RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .image-showcase {
+        width: 100%;
+        height: 400px; 
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .image-showcase img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    h1 { 
+        font-size: 3rem; 
+    }
+    .headline { 
+        font-size: 2.5rem; 
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+        
+    }
+    .logo-box {
+        margin-top: 0; /* Kembalikan ke normal di mobile */
+    }
+}
+
+/* Default: Sembunyikan tombol trigger di Desktop */
+.mobile-menu-trigger {
+    display: none;
+}
+
+/* KHUSUS MOBILE */
+@media (max-width: 768px) {
+    /* Tampilkan tombol MENU */
+    .mobile-menu-trigger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        font-family: var(--font-nav);
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0 10px; /* Biar area klik lega */
+    }
+
+    /* Sembunyikan list menu secara default */
+    nav ul {
+        display: none; /* Hilang dulu */
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        animation: fadeIn 0.3s ease;
+    }
+
+    /* Class ini bakal ditambahin lewat JS pas diklik */
+    nav ul.show-menu {
+        display: flex; /* Munculin memanjang ke bawah */
+    }
+    
+    /* Puter panahnya pas menu kebuka */
+    .rotate-arrow {
+        transform: rotate(180deg);
+    }
+}
+
+/* Animasi halus pas muncul */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
